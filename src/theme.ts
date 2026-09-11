@@ -1,42 +1,42 @@
 /**
  * anb simulation — design tokens
  *
- * Single source of truth for the app's look & feel. The palette is inspired by
- * Arab National Bank's (anb) green/teal brand identity. Adjust the values here
- * to re-skin the entire app.
+ * Single source of truth for the app's look & feel. The palette follows Arab
+ * National Bank's (anb) blue brand identity. Adjust the values here to
+ * re-skin the entire app.
  */
 
 export const colors = {
   // Brand
-  primary: '#0B7D6E', // anb green/teal
-  primaryDark: '#075B50',
-  primaryLight: '#12A08C',
-  primarySoft: '#E6F4F1', // tinted background for chips / soft surfaces
-  accent: '#C9A24B', // subtle gold used for premium/rewards accents
+  primary: '#0B6FE0', // anb blue
+  primaryDark: '#0A54AB',
+  primaryLight: '#4E96EC',
+  primarySoft: '#E7F1FD', // tinted background for chips / soft surfaces
+  accent: '#F2A93B', // warm accent used for rewards / highlights
 
   // Gradients
-  gradientStart: '#0F8A7A',
-  gradientEnd: '#075B50',
-  cardGradientStart: '#0E9C87',
-  cardGradientEnd: '#064A42',
+  gradientStart: '#1E86F0',
+  gradientEnd: '#0A57C4',
+  cardGradientStart: '#1F86F0',
+  cardGradientEnd: '#0A3E9E',
 
-  // Neutrals
-  ink: '#0E1B18', // primary text
-  body: '#33413D', // body text
-  muted: '#6B7A75', // secondary text
-  faint: '#9AA8A3', // tertiary text / placeholders
-  line: '#E3E9E7', // hairline borders
+  // Neutrals (cool blue-grey)
+  ink: '#0F1B2D', // primary text
+  body: '#334155', // body text
+  muted: '#64748B', // secondary text
+  faint: '#94A3B8', // tertiary text / placeholders
+  line: '#E4EAF1', // hairline borders
   surface: '#FFFFFF',
-  surfaceAlt: '#F5F8F7', // screen background
-  overlay: 'rgba(9, 33, 29, 0.45)',
+  surfaceAlt: '#EFF3F8', // screen background (soft blue-grey)
+  overlay: 'rgba(10, 25, 47, 0.45)',
 
   // Status
   success: '#1E9E5A',
   successSoft: '#E4F5EC',
-  danger: '#D64545',
+  danger: '#E0453C',
   dangerSoft: '#FBEAEA',
   warning: '#E0A800',
-  info: '#2F6FED',
+  info: '#0B6FE0',
 
   white: '#FFFFFF',
   black: '#000000',

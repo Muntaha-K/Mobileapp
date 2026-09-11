@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0B7D6E"
+      "backgroundColor": "#EFF3F8"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0B7D6E"
+        "backgroundColor": "#EFF3F8"
       },
       "package": "com.anbsim.app"
     },
@@ -35,7 +35,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#0B7D6E",
+          "backgroundColor": "#EFF3F8",
           "image": "./assets/splash.png",
           "imageWidth": 180
         }

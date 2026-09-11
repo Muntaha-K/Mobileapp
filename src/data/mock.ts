@@ -61,7 +61,7 @@ export const cards: Card[] = [
     balance: 3420.5, // outstanding
     limit: 40000,
     frozen: false,
-    gradient: ['#0E9C87', '#064A42'],
+    gradient: ['#1F86F0', '#0A3E9E'],
   },
   {
     id: 'card_mada_debit',
@@ -87,7 +87,7 @@ export const cards: Card[] = [
     balance: 12750.0,
     limit: 60000,
     frozen: true,
-    gradient: ['#3A2C5F', '#1B1330'],
+    gradient: ['#16324F', '#0A1B2E'],
   },
 ];
 
