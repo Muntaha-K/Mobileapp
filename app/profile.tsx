@@ -14,7 +14,7 @@ export default function Profile() {
 
   const info: { icon: keyof typeof Ionicons.glyphMap; label: string; value: string }[] = [
     { icon: 'call-outline', label: 'Mobile', value: '+966 55 ••• ••21' },
-    { icon: 'mail-outline', label: 'Email', value: 'sara.o•••@email.com' },
+    { icon: 'mail-outline', label: 'Email', value: 'mun.k•••@email.com' },
     { icon: 'card-outline', label: 'National ID', value: '10••••••78' },
     { icon: 'location-outline', label: 'City', value: 'Riyadh, KSA' },
     { icon: 'calendar-outline', label: 'Member since', value: user.memberSince },

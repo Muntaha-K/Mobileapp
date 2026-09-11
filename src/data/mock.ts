@@ -8,11 +8,11 @@ import type {
 } from './types';
 
 export const user = {
-  name: 'Sara Al Otaibi',
-  firstName: 'Sara',
+  name: 'Mun K',
+  firstName: 'Mun',
   greetingAr: 'أهلاً',
   memberSince: '2019',
-  avatarColor: '#0B7D6E',
+  avatarColor: '#0B6FE0',
   passcode: '1234', // simulation only
 };
 
@@ -56,7 +56,7 @@ export const cards: Card[] = [
     type: 'visa',
     kind: 'credit',
     number: '4532 8891 2210 7788',
-    holder: 'SARA AL OTAIBI',
+    holder: 'MUN K',
     expiry: '08/28',
     balance: 3420.5, // outstanding
     limit: 40000,
@@ -69,7 +69,7 @@ export const cards: Card[] = [
     type: 'mada',
     kind: 'debit',
     number: '5588 4412 9087 3311',
-    holder: 'SARA AL OTAIBI',
+    holder: 'MUN K',
     expiry: '02/27',
     balance: 48250.75,
     linkedAccountId: 'acc_current',
@@ -82,7 +82,7 @@ export const cards: Card[] = [
     type: 'mastercard',
     kind: 'credit',
     number: '5412 7788 1123 4590',
-    holder: 'SARA AL OTAIBI',
+    holder: 'MUN K',
     expiry: '11/26',
     balance: 12750.0,
     limit: 60000,

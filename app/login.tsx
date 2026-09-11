@@ -18,7 +18,7 @@ type Lang = 'ar' | 'en';
 const T = {
   ar: {
     welcome: 'مرحباً',
-    name: 'سارة',
+    name: 'Mun K',
     password: 'كلمة المرور',
     changeUser: 'تغيير المستخدم',
     forgot: 'نسيت بيانات الدخول؟',
@@ -31,7 +31,7 @@ const T = {
   },
   en: {
     welcome: 'Welcome',
-    name: 'Sara',
+    name: 'Mun K',
     password: 'Password',
     changeUser: 'Change user',
     forgot: 'Forgot login details?',
