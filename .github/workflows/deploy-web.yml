@@ -1,7 +1,9 @@
 name: Deploy web demo to GitHub Pages
 
-# Builds the Expo web export and publishes it to GitHub Pages so the anb
-# simulation can be opened in any browser (including an iPad) with no install.
+# Builds the Expo web export and publishes it to the gh-pages branch, which
+# GitHub Pages serves at https://<user>.github.io/<repo>/. Pages is already
+# enabled for this repo (source: gh-pages branch), so no special Pages
+# permissions are needed — the workflow just needs to push the built site.
 
 on:
   push:
@@ -9,17 +11,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Allow only one concurrent deployment.
 concurrency:
-  group: pages
+  group: deploy-web
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,43 +28,24 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Setup Pages
-        # Turns Pages on automatically (Source: GitHub Actions). Works once the
-        # repo is public; exposes base_path for correct asset URLs.
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Install dependencies
         run: npm ci
 
       - name: Export web build
-        # base_path resolves assets under https://<user>.github.io/<repo>/
-        # (falls back to the repo name if the output is empty).
+        # EXPO_BASE_URL makes assets resolve under https://<user>.github.io/<repo>/
         env:
-          EXPO_BASE_URL: ${{ steps.pages.outputs.base_path || format('/{0}', github.event.repository.name) }}
+          EXPO_BASE_URL: /${{ github.event.repository.name }}
         run: npx expo export --platform web
 
-      - name: Add SPA fallback
-        # Copy index.html to 404.html so client-side routes work on refresh.
-        run: cp dist/index.html dist/404.html
+      - name: SPA + Pages housekeeping
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
 
-      - name: Disable Jekyll processing
-        run: touch dist/.nojekyll
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
